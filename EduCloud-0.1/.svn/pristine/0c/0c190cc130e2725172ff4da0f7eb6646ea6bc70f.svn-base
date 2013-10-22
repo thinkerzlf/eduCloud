@@ -1,0 +1,16 @@
+package com.activity.educloud;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+//引导页面，第一次进入时引导用户使用的页面
+public class GuideAcitivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_guide);
+	}
+
+}

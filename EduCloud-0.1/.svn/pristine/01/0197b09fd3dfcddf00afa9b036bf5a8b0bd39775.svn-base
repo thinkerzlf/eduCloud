@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:mobile="http://com.filetransfer.cloud" android:orientation="vertical"
+	android:layout_width="fill_parent" android:layout_height="fill_parent">
+	<com.upload.educloud.FileBrowser
+		android:id="@+id/filebrowser"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent" 
+		mobile:folderImage="@drawable/document"
+		mobile:otherFileImage="@drawable/other" />
+</LinearLayout>

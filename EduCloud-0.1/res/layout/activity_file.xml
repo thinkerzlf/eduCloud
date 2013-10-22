@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fffffF"
+    android:orientation="vertical" >
+  		
+	<!--文件列表XML  -->
+	<ListView android:id="@+id/ltv_file"  
+		android:layout_width="fill_parent"  
+	    android:layout_height="fill_parent"  
+	    android:divider="#ffc9c9c9"  
+	    android:dividerHeight="1dp"/>	
+</LinearLayout>

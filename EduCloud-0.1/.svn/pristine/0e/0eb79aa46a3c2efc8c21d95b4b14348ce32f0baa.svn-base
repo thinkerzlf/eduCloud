@@ -1,0 +1,28 @@
+package com.activity.educloud;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class LoginActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_login);
+	}
+
+	@Override
+	public void finish() {
+		// TODO Auto-generated method stub
+		//super.finish();
+		MyApplication mApp = (MyApplication)getApplication();
+		if (mApp.isExit()) {
+			int pid = android.os.Process.myPid();
+			android.os.Process.killProcess(pid);
+			finish();
+		}
+	}
+	
+	
+}

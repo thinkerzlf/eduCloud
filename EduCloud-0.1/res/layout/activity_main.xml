@@ -1,0 +1,117 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="fill"
+        android:orientation="vertical" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1E90FF"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/imbtn_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/male_head" />
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1.17"
+                android:gravity="center_vertical"
+                android:text="用户名"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/imbtn_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@drawable/message" />
+
+            <ImageButton
+                android:id="@+id/imbtn_tools"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tools" />
+
+        </LinearLayout>
+        
+        <TabHost
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" 
+	    android:id="@android:id/tabhost">
+		<LinearLayout
+			android:orientation="vertical"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent">
+	
+		    <TabWidget
+		    	android:id="@android:id/tabs"
+		    	android:layout_width="match_parent"
+		    	android:layout_height="match_parent" 
+		    	android:tabStripEnabled="true"
+		    	android:tabStripLeft="@drawable/tabstrip"
+		    	android:tabStripRight="@drawable/tabstrip"/>
+	
+		    <FrameLayout
+		    	android:id="@android:id/tabcontent"
+		    	android:layout_width="match_parent"
+		    	android:layout_height="match_parent"
+		    	android:padding="3dp"/>
+		    </LinearLayout>
+		</TabHost>
+        
+
+        <RelativeLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent">
+            
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentBottom="true"
+	            android:background="#1E90FF" >
+	
+	            <ImageButton
+	                android:id="@+id/imbtn_upload"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="0.25"
+	                android:background="@drawable/upload" />
+	
+	            <ImageButton
+	                android:id="@+id/imbtn_download"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="0.25"
+	                android:background="@drawable/download" />
+	
+	            <ImageButton
+	                android:id="@+id/imbtn_delete"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="0.25"
+	                android:background="@drawable/delete" />
+	            
+	            <ImageButton
+	                android:id="@+id/imbtn_others"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="0.25"
+	                android:background="@drawable/others" />
+	
+	        </LinearLayout>
+		</RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
