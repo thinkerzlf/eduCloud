@@ -26,7 +26,7 @@ import android.widget.TextView;
 public class MessageActivity extends ListActivity {
 	
 	private ImageButton goback;
-	//Ìí¼Ó²Ëµ¥Ä£¿éÀà
+	//æ·»åŠ èœå•æ¨¡å—ç±»
 	
 	private List<Map<String, Object>> mData;
 	@Override
@@ -38,7 +38,7 @@ public class MessageActivity extends ListActivity {
 		MyAdapter adapter = new MyAdapter(this);
 		setListAdapter(adapter);
 		
-		//³õÊ¼»¯²Ëµ¥
+		//åˆå§‹åŒ–èœå•
 	}
 	private View.OnClickListener gobackBtnClickListener = new OnClickListener(){
 		@Override
@@ -52,19 +52,19 @@ public class MessageActivity extends ListActivity {
 	
 
 	private List<Map<String, Object>> getData() {
-		//»ñÈ¡IntentÖĞµÄBundle¶ÔÏó
+		//è·å–Intentä¸­çš„Bundleå¯¹è±¡
 //		Bundle bundle = this.getIntent().getExtras();
-		//È¡µÃBundle¶ÔÏóÖĞµÄÊı¾İ
+		//å–å¾—Bundleå¯¹è±¡ä¸­çš„æ•°æ®
 //		String previousTitle = bundle.getString("title");
 //		getWindow().setTitle(previousTitle);
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		
-		//¾²Ì¬µÄĞ£Ô°ĞÅÏ¢Ä£¿éµÄĞÅÏ¢£¬ÒÔºó½«ÒªÓÃÊı¾İ¿âÀ´´æ´¢
-		String [] title = {"ITAT¹ÙÍø¿Í·ş","ÖĞĞË±­°²×¿¹ÙÍø","SUNRISE¼¼ÊõĞ¡×é"};
+		//é™æ€çš„æ ¡å›­ä¿¡æ¯æ¨¡å—çš„ä¿¡æ¯ï¼Œä»¥åå°†è¦ç”¨æ•°æ®åº“æ¥å­˜å‚¨
+		String [] title = {"ITATå®˜ç½‘å®¢æœ","ä¸­å…´æ¯å®‰å“å®˜ç½‘","SUNRISEæŠ€æœ¯å°ç»„"};
 		String [] info = {
-				"±ÈÈü¼´½«¿ªÊ¼£¬Ï£Íû´ó¼Ò×öºÃÈüÇ°×¼±¸",
-				"AndroidÓ¦ÓÃ³ÌĞò¿ª·¢±ÈÈüÒÑ¾­¿ªÊ¼Ìá½»×÷Æ·",
-				"ÎÒÃÇµÄÈıÈË¼¼ÊõĞ¡×é£¬Ï£Íû´ó¼Ò¶à¶àÖ§³Ö~~"
+				"æ¯”èµ›å³å°†å¼€å§‹ï¼Œå¸Œæœ›å¤§å®¶åšå¥½èµ›å‰å‡†å¤‡",
+				"Androidåº”ç”¨ç¨‹åºå¼€å‘æ¯”èµ›å·²ç»å¼€å§‹æäº¤ä½œå“",
+				"æˆ‘ä»¬çš„ä¸‰äººæŠ€æœ¯å°ç»„ï¼Œå¸Œæœ›å¤§å®¶å¤šå¤šæ”¯æŒ~~"
 				};
 		int [] img = {R.drawable.itat_head,R.drawable.zte_head,R.drawable.sunrise_head};
 		for (int i=0; i<img.length; i++){
@@ -81,17 +81,17 @@ public class MessageActivity extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {		
 //		Log.v("MyListView4-click", (String)mData.get(position).get("title"));
-//		//½«Ñ¡ÖĞListView´«µİ¸øModuleListActivityÊÓÍ¼
-//		//newÒ»¸öIntent¶ÔÏó£¬²¢Ö¸¶¨class
+//		//å°†é€‰ä¸­ListViewä¼ é€’ç»™ModuleListActivityè§†å›¾
+//		//newä¸€ä¸ªIntentå¯¹è±¡ï¼Œå¹¶æŒ‡å®šclass
 //		Intent intent = new Intent();
 //		intent.setClass(MessageActivity.this, MessageActivity.class);
 //		
-//		//newÒ»¸öBundled¶ÔÏó£¬²¢½«Òª´«µİµÄÊı¾İ´«Èë
+//		//newä¸€ä¸ªBundledå¯¹è±¡ï¼Œå¹¶å°†è¦ä¼ é€’çš„æ•°æ®ä¼ å…¥
 //		Bundle bundle = new Bundle();
 //		bundle.putString("title", (String)mData.get(position).get("title"));
-//		//½«Bundle¶ÔÏóassign¸øIntent
+//		//å°†Bundleå¯¹è±¡assignç»™Intent
 //		intent.putExtras(bundle);
-//		//µ÷ÓÃModuleListActivity
+//		//è°ƒç”¨ModuleListActivity
 //		startActivity(intent);
 	}
 	
@@ -179,14 +179,14 @@ public class MessageActivity extends ListActivity {
 	}
 	
 	
-	//´´½¨²Ëµ¥£¬
+	//åˆ›å»ºèœå•ï¼Œ
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// TODO Auto-generated method stub
 //		mainMenu.createOptionsMenu(menu);
 		return super.onCreateOptionsMenu(menu);
 	}
-	//µ÷ÓÃ²Ëµ¥
+	//è°ƒç”¨èœå•
 	@Override
 	public boolean onMenuOpened(int featureId, Menu menu) {
 		// TODO Auto-generated method stub
@@ -194,7 +194,7 @@ public class MessageActivity extends ListActivity {
 		return false;
 	}
 	
-	//¿ìËÙÍË³öÏìÓ¦
+	//å¿«é€Ÿé€€å‡ºå“åº”
 	
 	
 }

@@ -30,12 +30,12 @@ public class FileForderActivity extends Activity implements OnFileBrowserListene
 		String uploadUrl = "http://121.195.169.234:8080/sunrise_cloud/upload.action";
 		UpLoadFile upload = new UpLoadFile();
 		String parameter = "";
-		//文件上传
+		//鏂囦欢涓婁紶
 		new UpLoadFile().doUpLoadStruct(this, uploadUrl, filename);
 //		String uploadUrl = "http://localhost/upload/UploadServlet";
 //		UpLoadFile upload = new UpLoadFile();
 //		String parameter = "";
-//		//文件上传
+//		//鏂囦欢涓婁紶
 //		new UpLoadFile().doUpLoad(this, uploadUrl, filename, parameter);
 	}
 

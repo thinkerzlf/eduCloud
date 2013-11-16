@@ -36,21 +36,21 @@ public class UpLoadFile {
 
 			MultipartEntity postEntity = new MultipartEntity();
 
-			// ×Ö·ûÓÃStringBody
+			// å­—ç¬¦ç”¨StringBody
 			ContentBody cbUserName = new StringBody( "ggyy" );
-			ContentBody cbPassWord = new StringBody( "ÃÜÂë" );
+			ContentBody cbPassWord = new StringBody( "å¯†ç " );
 			ContentBody cbSavePath = new StringBody( "ggyy" );
-			String fileName = "newUpload";//ÎÄ¼şÃû.ºó×ºÃû
+			String fileName = "newUpload";//æ–‡ä»¶å.åç¼€å
 			ContentBody cbFileName = new StringBody( fileName );
 
-			// ÎÄ¼şÓÃFileBody£¬²¢Ö¸¶¨ÎÄ¼şÀàĞÍ
-//			File file = new File( "ÎÄ¼şµÄ¾ø¶ÔÂ·¾¶");
+			// æ–‡ä»¶ç”¨FileBodyï¼Œå¹¶æŒ‡å®šæ–‡ä»¶ç±»å‹
+//			File file = new File( "æ–‡ä»¶çš„ç»å¯¹è·¯å¾„");
 			File file = new File(file_name);
 			String length = file.getPath();
 			ContentBody cbFileData = new FileBody(file, "image/jpg" );
 
-			// °ÑÉÏÃæ´´½¨µÄÕâĞ©BodyÈ«²¿¼Óµ½EntityÀïÃæÈ¥¡£
-			// ×¢ÒâËûÃÇµÄkey£¬ÕâĞ©keyÔÚStruts2·şÎñÆ÷¶ËActionµÄ´úÂëÀï±ØĞë±£³ÖÒ»ÖÂ£¡£¡
+			// æŠŠä¸Šé¢åˆ›å»ºçš„è¿™äº›Bodyå…¨éƒ¨åŠ åˆ°Entityé‡Œé¢å»ã€‚
+			// æ³¨æ„ä»–ä»¬çš„keyï¼Œè¿™äº›keyåœ¨Struts2æœåŠ¡å™¨ç«¯Actionçš„ä»£ç é‡Œå¿…é¡»ä¿æŒä¸€è‡´ï¼ï¼
 			postEntity.addPart( "userName_ad", cbUserName );
 //			postEntity.addPart( "passWord", cbPassWord );
 			postEntity.addPart( "uploadFileName", cbFileName );
@@ -58,17 +58,17 @@ public class UpLoadFile {
 			postEntity.addPart("savePath", cbSavePath);
 
 			httpPost.setEntity( postEntity );
-			// ÏÂÃæÕâ¾ä»°¾Í°ÑÊı¾İÌá½»µ½·şÎñÆ÷È¥ÁË
+			// ä¸‹é¢è¿™å¥è¯å°±æŠŠæ•°æ®æäº¤åˆ°æœåŠ¡å™¨å»äº†
 			HttpResponse response = httpClient.execute( httpPost );
-			// ´ò¿ªresponseµÄÊı¾İÁ÷£¬¾Í¿ÉÒÔ¶ÁÈ¡·şÎñÆ÷¶ËµÄ»ØÖ´Êı¾İ
+			// æ‰“å¼€responseçš„æ•°æ®æµï¼Œå°±å¯ä»¥è¯»å–æœåŠ¡å™¨ç«¯çš„å›æ‰§æ•°æ®
 			InputStream reader = response.getEntity().getContent();
-			Toast.makeText(activity, "´«ËÍ³É¹¦", Toast.LENGTH_LONG).show();
+			Toast.makeText(activity, "ä¼ é€æˆåŠŸ", Toast.LENGTH_LONG).show();
 		}catch (Exception e){
-			Toast.makeText(activity, "ºÜ±§Ç¸£¬ÄãËùÔÚÍøÂç²»ÊÇ½ÌÓıÍø", Toast.LENGTH_LONG).show();
+			Toast.makeText(activity, "å¾ˆæŠ±æ­‰ï¼Œä½ æ‰€åœ¨ç½‘ç»œä¸æ˜¯æ•™è‚²ç½‘", Toast.LENGTH_LONG).show();
 		}
 		return true;
 	}
-	//ÎÄ¼şÃû£¬·şÎñÆ÷Url£¬²ÎÊı
+	//æ–‡ä»¶åï¼ŒæœåŠ¡å™¨Urlï¼Œå‚æ•°
 	public static boolean doUpLoad(Activity activity, String file_name, String server_url, String parameter){
 		String filename = file_name;
 		String uploadUrl = server_url;

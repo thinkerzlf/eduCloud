@@ -14,22 +14,22 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.animation.AnimationUtils;
 
-//Òýµ¼Ò³Ãæ£¬µÚÒ»´Î½øÈëÊ±Òýµ¼ÓÃ»§Ê¹ÓÃµÄÒ³Ãæ
+//å¼•å¯¼é¡µé¢ï¼Œç¬¬ä¸€æ¬¡è¿›å…¥æ—¶å¼•å¯¼ç”¨æˆ·ä½¿ç”¨çš„é¡µé¢
 public class GuideActivity extends Activity implements OnGestureListener{
 
 	private static final int FLING_MIN_DISTANCE = 100;  
     private ViewFlipper flipper;  
     private GestureDetector detector; 
     private static int count = 0;
-    private SharedPreferences preferences; //Ò³Ãæ±êÊ¶·û
+    private SharedPreferences preferences; //é¡µé¢æ ‡è¯†ç¬¦
 	private Intent localIntent = null;
     
-  //·ÅÕÕÆ¬µÄIDºÅ
+  //æ”¾ç…§ç‰‡çš„IDå·
     private int[] slideImageIDs = {
             R.drawable.guide1,
             R.drawable.guide2
            						};
-    //·ÅÕÕÆ¬¶ÔÏó
+    //æ”¾ç…§ç‰‡å¯¹è±¡
     private ImageView[] slideImages = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class GuideActivity extends Activity implements OnGestureListener{
         int count = preferences.getInt("count", 0);
         Editor editor = preferences.edit();
               
-        //²»ÊÇµÚÒ»´Î½øÈëÌø×ªµ½»¶Ó­Ò³
+        //ä¸æ˜¯ç¬¬ä¸€æ¬¡è¿›å…¥è·³è½¬åˆ°æ¬¢è¿Žé¡µ
         if(count != 0)
         {
         	localIntent = new Intent(this, WelcomeActivity.class); 
@@ -47,7 +47,7 @@ public class GuideActivity extends Activity implements OnGestureListener{
         	
         }
         editor.putInt("count", ++count);
-        //Ìá½»ÐÞ¸Ä
+        //æäº¤ä¿®æ”¹
         editor.commit();
  
 		setContentView(R.layout.activity_guide);
@@ -84,14 +84,14 @@ public class GuideActivity extends Activity implements OnGestureListener{
 			float arg3) {
 		// TODO Auto-generated method stub
 		if (e1.getX() - e2.getX() > FLING_MIN_DISTANCE && count < slideImages.length-1) { 
-			//ÉèÖÃView½øÈëºÍÍË³öµÄ¶¯»­Ð§¹û 
+			//è®¾ç½®Viewè¿›å…¥å’Œé€€å‡ºçš„åŠ¨ç”»æ•ˆæžœ 
 			this.flipper.setInAnimation(AnimationUtils.loadAnimation(this, 
 			R.anim.left_in)); 
 			this.flipper.setOutAnimation(AnimationUtils.loadAnimation(this, 
 			R.anim.left_out)); 
 			this.flipper.showNext(); 
 			count++;
-			//µ½×îºóÒ»¸öÒ³ÃæµÄÊ±ºò¿ÉÒÔÏìÓ¦µã»÷ÊÂ¼þ
+			//åˆ°æœ€åŽä¸€ä¸ªé¡µé¢çš„æ—¶å€™å¯ä»¥å“åº”ç‚¹å‡»äº‹ä»¶
 			if(this.flipper.getCurrentView() == slideImages[slideImages.length-1])
 			{
 				this.flipper.setOnClickListener(new OnClickListener(){  
