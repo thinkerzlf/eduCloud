@@ -2,6 +2,7 @@ package com.activity.educloud;
 
 import java.lang.reflect.Field;
 
+import android.util.Log;
 import com.upload.educloud.FileForderActivity;
 
 
@@ -26,8 +27,9 @@ import android.widget.Toast;
 
 @SuppressWarnings("deprecation")
 public class MainActivity extends TabActivity {
+    final static String TAG = "MainActivity";
 
-	//tabÀ¸
+	//tabæ 
 	private TabHost myTabhost;
 	private ImageButton head,message,tools;
 	private ImageButton upload,download,delete,others;
@@ -39,44 +41,44 @@ public class MainActivity extends TabActivity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
-		
+		Log.i(TAG, "main start");
 		TabHost.TabSpec spec;
 		Intent intent;
 		myTabhost=this.getTabHost();
 		
-		//µÚÒ»¸öÑ¡Ïî¿¨
-		//ÉèÖÃ¸ÃÑ¡Ïî¿¨µã»÷ºóËùÌø×ªµÄactivity
+		//ç¬¬ä¸€ä¸ªé€‰é¡¹å¡
+		//è®¾ç½®è¯¥é€‰é¡¹å¡ç‚¹å‡»åæ‰€è·³è½¬çš„activity
 		intent=new Intent().setClass(this,FileActivity.class);
 		spec=myTabhost.newTabSpec("one")
-			.setIndicator("ÁĞ±í", null)
+			.setIndicator("åˆ—è¡¨", null)
 			.setContent(intent);
 		myTabhost.addTab(spec);
 		
-		//µÚ¶ş¸öÑ¡Ïî¿¨
-		//ÉèÖÃ¸ÃÑ¡Ïî¿¨µã»÷ºóËùÌø×ªµÄactivity
+		//ç¬¬äºŒä¸ªé€‰é¡¹å¡
+		//è®¾ç½®è¯¥é€‰é¡¹å¡ç‚¹å‡»åæ‰€è·³è½¬çš„activity
 		intent=new Intent().setClass(this,ShareActivity.class);
 		spec=myTabhost.newTabSpec("two")
-			.setIndicator("·ÖÏí", null)
+			.setIndicator("åˆ†äº«", null)
 			.setContent(intent);
 		myTabhost.addTab(spec);
 		
-		//µÚÈı¸öÑ¡Ïî¿¨
-		//ÉèÖÃ¸ÃÑ¡Ïî¿¨µã»÷ºóËùÌø×ªµÄactivity
+		//ç¬¬ä¸‰ä¸ªé€‰é¡¹å¡
+		//è®¾ç½®è¯¥é€‰é¡¹å¡ç‚¹å‡»åæ‰€è·³è½¬çš„activity
 		intent=new Intent().setClass(this,FriendActivity.class);
 		spec=myTabhost.newTabSpec("three")
-			.setIndicator("ºÃÓÑ", null)
+			.setIndicator("å¥½å‹", null)
 			.setContent(intent);
 		myTabhost.addTab(spec);
 		
-		//µÚËÄ¸öÑ¡Ïî¿¨
-		//ÉèÖÃ¸ÃÑ¡Ïî¿¨µã»÷ºóËùÌø×ªµÄactivity
+		//ç¬¬å››ä¸ªé€‰é¡¹å¡
+		//è®¾ç½®è¯¥é€‰é¡¹å¡ç‚¹å‡»åæ‰€è·³è½¬çš„activity
 		intent=new Intent().setClass(this,GroupActivity.class);
 		spec=myTabhost.newTabSpec("four")
-			.setIndicator("Èº×é", null)
+			.setIndicator("ç¾¤ç»„", null)
 			.setContent(intent);
 		myTabhost.addTab(spec);
 		
-		//¸ü¸ÄtabÑ¡Ïî¿¨¸ß¶È
+		//æ›´æ”¹tabé€‰é¡¹å¡é«˜åº¦
 		TabWidget tabwidget=myTabhost.getTabWidget();
 		//Integer tabimage[] = {R.drawable.tab_list,R.drawable.tab_share,R.drawable.tab_friend,
 		//		R.drawable.tab_group};
@@ -205,7 +207,7 @@ public class MainActivity extends TabActivity {
 				intent.setClass(MainActivity.this, FileForderActivity.class); 
 				startActivity(intent);	
 			}catch(Exception e){
-//				Toast.makeText(this, "ºÜ±§Ç¸£¬ÄãËùÔÚÍøÂç²»ÊÇ½ÌÓıÍø", Toast.LENGTH_LONG).show();
+//				Toast.makeText(this, "å¾ˆæŠ±æ­‰ï¼Œä½ æ‰€åœ¨ç½‘ç»œä¸æ˜¯æ•™è‚²ç½‘", Toast.LENGTH_LONG).show();
 			}
 					
 		}
@@ -230,8 +232,8 @@ public class MainActivity extends TabActivity {
 	private View.OnClickListener downloadBtnClickListener = new OnClickListener(){
 	@Override
 	public void onClick(View v) {
-		//ÌáÊ¾¿ò
-		Toast.makeText(MainActivity.this, "ºÜ±§Ç¸£¬ÄãËùÔÚÍøÂç²»ÊÇ½ÌÓıÍø", Toast.LENGTH_LONG).show();
+		//æç¤ºæ¡†
+		Toast.makeText(MainActivity.this, "å¾ˆæŠ±æ­‰ï¼Œä½ æ‰€åœ¨ç½‘ç»œä¸æ˜¯æ•™è‚²ç½‘", Toast.LENGTH_LONG).show();
 	}
 	};
 	
@@ -255,11 +257,11 @@ public class MainActivity extends TabActivity {
 		@Override
 		public void onClick(View v) {			
 //			AlertDialog show = new AlertDialog.Builder(MainActivity.this)
-//			.setTitle("ÌáÊ¾")
-//			.setMessage("±§Ç¸~~ÄúËùÔÚÍøÂç²»ÊÇ½ÌÓıÍø")
-//			.setPositiveButton("È·¶¨", null)
+//			.setTitle("æç¤º")
+//			.setMessage("æŠ±æ­‰~~æ‚¨æ‰€åœ¨ç½‘ç»œä¸æ˜¯æ•™è‚²ç½‘")
+//			.setPositiveButton("ç¡®å®š", null)
 //			.show();
-			Toast.makeText(MainActivity.this, "ºÜ±§Ç¸£¬ÄãËùÔÚÍøÂç²»ÊÇ½ÌÓıÍø", Toast.LENGTH_LONG).show();
+			Toast.makeText(MainActivity.this, "å¾ˆæŠ±æ­‰ï¼Œä½ æ‰€åœ¨ç½‘ç»œä¸æ˜¯æ•™è‚²ç½‘", Toast.LENGTH_LONG).show();
 		}
 		};
 		
@@ -282,7 +284,7 @@ public class MainActivity extends TabActivity {
 		private View.OnClickListener othersBtnClickListener = new OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(MainActivity.this, "ºÜ±§Ç¸£¬ÄãËùÔÚÍøÂç²»ÊÇ½ÌÓıÍø", Toast.LENGTH_LONG).show();
+				Toast.makeText(MainActivity.this, "å¾ˆæŠ±æ­‰ï¼Œä½ æ‰€åœ¨ç½‘ç»œä¸æ˜¯æ•™è‚²ç½‘", Toast.LENGTH_LONG).show();
 				
 			}
 			};
@@ -309,7 +311,7 @@ public class MainActivity extends TabActivity {
 				if(exitnum == 0)
 				{
 					exitnum++;
-					Toast.makeText(MainActivity.this, "ÔÙ°´Ò»´ÎÍË³öÓ¦ÓÃ", Toast.LENGTH_LONG).show();
+					Toast.makeText(MainActivity.this, "å†æŒ‰ä¸€æ¬¡é€€å‡ºåº”ç”¨", Toast.LENGTH_LONG).show();
 					return;
 				}
 				else if(exitnum == 1)
